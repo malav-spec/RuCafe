@@ -110,6 +110,7 @@ public class CoffeeController {
         }
     }
 
+    @FXML
     public void getTotal(){
 
         subtotal.clear();
