@@ -43,7 +43,7 @@
          <center>
             <FlowPane prefHeight="228.0" prefWidth="738.0" BorderPane.alignment="CENTER">
                <children>
-                  <Button id="coffeeButton" fx:id="orderCoffee" mnemonicParsing="false" prefHeight="140.0" prefWidth="327.0" text="Order Coffee">
+                  <Button id="coffeeButton" fx:id="orderCoffee" mnemonicParsing="false" onAction="#goToCoffeeTab" prefHeight="140.0" prefWidth="327.0" text="Order Coffee">
                   <graphic>
                      <ImageView fitHeight="146.0" fitWidth="211.0" pickOnBounds="true" preserveRatio="true">
                   <image>
@@ -58,7 +58,7 @@
                         <Font size="15.0" />
                      </font>
                   </Button>
-                  <Button fx:id="orderDonut" mnemonicParsing="false" prefHeight="140.0" prefWidth="299.0" text="Order Donuts">
+                  <Button fx:id="orderDonut" mnemonicParsing="false" onAction="#goToDonutTab" prefHeight="140.0" prefWidth="299.0" text="Order Donuts">
                   <graphic>
                      <ImageView fitHeight="105.0" fitWidth="193.0" pickOnBounds="true" preserveRatio="true">
                         <image>
