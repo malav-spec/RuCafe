@@ -1,12 +1,13 @@
 package model;
 
-import javafx.fxml.FXML;
-
 public class Coffee extends MenuItem implements Customizable{
 
     private String size = "";
     private int num_add_in = 0;
     private String[] addIn = new String[5];//List for all the addIn
+
+    public Coffee() {
+    }
 
     public void increaseAddOn(String add){
         addIn[num_add_in] = add;
@@ -37,7 +38,7 @@ public class Coffee extends MenuItem implements Customizable{
         return Math.round(number * 100.0) / 100.0;
     }
 
-    public double calculate(){
+    public double itemPrice(){
 
         double size_price = 0;
 
@@ -62,11 +63,12 @@ public class Coffee extends MenuItem implements Customizable{
 
     @Override
     public String toString(){
-        return "$"+roundOff(calculate());
+        return "$"+roundOff(itemPrice());
     }
 
     @Override
     public boolean add(Object obj) {
+
         return false;
     }
 
