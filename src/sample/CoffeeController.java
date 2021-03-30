@@ -7,6 +7,7 @@ import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import model.Coffee;
+import static sample.Main.currentOrder;
 
 import java.io.File;
 import java.net.MalformedURLException;

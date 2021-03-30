@@ -5,13 +5,15 @@ import javafx.fxml.FXML;
 import javafx.scene.control.*;
 import model.Donuts;
 
+
 import java.util.ArrayList;
 import java.util.StringTokenizer;
+
+import static sample.Main.currentOrder;
 
 public class DonutController {
 
     Donuts donutOrder = new Donuts();
-
     @FXML
     private ComboBox flavorBox;
 
@@ -62,7 +64,8 @@ public class DonutController {
 
     @FXML
     public void addToList(){
-        orders.add(donutOrder.getDonutDetails());
+        orders.add(donutOrder.getDetails());
+        Donuts copyDonut= new Donuts();
         orderList.setItems(FXCollections.observableArrayList(orders));
         orderPrices.add(donutOrder.itemPrice());
         totalBox.setText(getSubTotal());
@@ -75,24 +78,20 @@ public class DonutController {
 
     @FXML
     public void addToOrder(){
-
-        int i;
-
-        for(i = 0; i < orders.size(); i++){
+        for(int i = 0; i < orders.size(); i++){
 
 
             StringTokenizer st = new StringTokenizer(orders.get(i).replaceAll("\\s", ""), ",");
             Donuts donut = getDonutOrder(st);
 
-            donut.add(donut);
-            if(donut.add(donut)){
-                Alert a = new Alert(Alert.AlertType.ERROR);
-                a.setContentText("Could not add Donuts to the order");
-                a.show();
-            }
+            currentOrder.add(donut);
+
         }
+        String stringTotal=getSubTotal();
+        currentOrder.setTotal(Double.parseDouble(stringTotal.substring(1)));
 
     }
+
 
     public Donuts getDonutOrder(StringTokenizer st){
 
@@ -141,7 +140,6 @@ public class DonutController {
         orderPrices.remove(price);
         orderList.setItems(FXCollections.observableArrayList(orders));
         totalBox.setText(getSubTotal());
-
     }
 
 }
