@@ -7,6 +7,9 @@ public class MenuItem {
 
     public MenuItem(){
     }
+    public String getDetails(){
+    return "";
+    }
 
     public MenuItem(Double price){
         this.price = price;
@@ -18,6 +21,18 @@ public class MenuItem {
 
     public Double getPrice(){
         return price;
+    }
+
+    public int getQuantity() {
+        return 0;
+    }
+
+    public String getFlavor() {
+        return null;
+    }
+
+    public String getType() {
+        return null;
     }
 
 }

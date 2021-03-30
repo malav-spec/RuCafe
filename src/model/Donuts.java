@@ -19,6 +19,7 @@ public class Donuts extends MenuItem implements Customizable{
     public Donuts(){
     }
 
+    @Override
     public String getType() {
         return type;
     }
@@ -26,7 +27,7 @@ public class Donuts extends MenuItem implements Customizable{
     public void setType(String type) {
         this.type = type;
     }
-
+    @Override
     public int getQuantity() {
         return quantity;
     }
@@ -34,7 +35,7 @@ public class Donuts extends MenuItem implements Customizable{
     public void setQuantity(int quantity) {
         this.quantity = quantity;
     }
-
+    @Override
     public String getFlavor() {
         return flavor;
     }
@@ -66,7 +67,8 @@ public class Donuts extends MenuItem implements Customizable{
         return roundOff(price_type * quantity);
     }
 
-    public String getDonutDetails(){
+    @Override
+    public String getDetails(){
         return type + ", " + flavor + ", " + quantity  + ", " + itemPrice();
     }
 
