@@ -7,11 +7,8 @@ import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.stage.Stage;
 import model.Donuts;
-
 import java.util.ArrayList;
 import java.util.StringTokenizer;
-
-import static sample.Main.allOrder;
 import static sample.Main.currentOrder;
 
 public class OrderController {
@@ -22,7 +19,7 @@ public class OrderController {
     @FXML
     private ListView orderList;
 
-    public void dowork(){
+    public void show(){
         ArrayList<String> strList=currentOrder.makeAL();
         orderList.setItems(FXCollections.observableArrayList(strList));
         totalBox.setText(""+currentOrder.getTotal());
@@ -37,7 +34,7 @@ public class OrderController {
     }
 
     public void addCoffee() throws Exception{
-        Parent root = FXMLLoader.load(getClass().getResource("Coffee.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("AllOrders.fxml"));
         Stage window=(Stage) add.getScene().getWindow();
         Scene scene = new Scene(root, 750, 600);
         scene.getStylesheets().add(getClass().getResource("MainWindow.css").toExternalForm());
@@ -50,7 +47,6 @@ public class OrderController {
             return;
         }
         String removeOrder = orderList.getSelectionModel().getSelectedItem().toString();
-        Donuts newDonut= new Donuts();
         String index = ""+orderList.getSelectionModel().getSelectedIndex();
         String removeItem= orderList.getSelectionModel().getSelectedItem().toString();
         updateTotal(removeItem);
@@ -58,8 +54,6 @@ public class OrderController {
         ArrayList<String> strList=currentOrder.makeAL();
         orderList.setItems(FXCollections.observableArrayList(strList));
         totalBox.setText(""+currentOrder.getTotal());
-
-
 
     }
     private void updateTotal(String str){
@@ -72,20 +66,4 @@ public class OrderController {
         currentOrder.setTotal(currentOrder.getTotal()-amount);
     }
 
-    private Donuts makeDonutObject(double price){
-        Donuts newDonut= new Donuts();
-        newDonut.setFlavor("Strawberry-Filled");
-        newDonut.setPrice(price);
-        newDonut.setQuantity(1);
-        newDonut.setType("Yeast Donut");
-        return newDonut;
-    }
-    private Donuts makeDonutObject2(double price){
-        Donuts newDonut= new Donuts();
-        newDonut.setFlavor("Strawberry-Filled");
-        newDonut.setPrice(price);
-        newDonut.setQuantity(12);
-        newDonut.setType("Yeast Donut");
-        return newDonut;
-    }
 }

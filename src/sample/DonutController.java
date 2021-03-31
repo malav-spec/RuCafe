@@ -88,7 +88,6 @@ public class DonutController {
             Donuts donut = getDonutOrder(st);
             currentOrder.add(donut);
         }
-        //addToCurrentOrder();
         String stringTotal=getSubTotal();
         currentOrder.setTotal(currentOrder.getTotal()+Double.parseDouble(stringTotal.substring(1)));
         Parent root = FXMLLoader.load(getClass().getResource("CurrentOrder.fxml"));
@@ -98,19 +97,6 @@ public class DonutController {
 
     }
 
-/*
-    private void addToCurrentOrder(){
-        for(int i=0;i<orders.size();i++){
-            Donuts temp = new Donuts();
-            StringTokenizer st = new StringTokenizer(orders.get(i), ",");
-            temp.setType(st.nextToken());
-            temp.setFlavor(st.nextToken());
-            temp.setQuantity(Integer.parseInt(st.nextToken()));
-            currentOrder.add(temp);
-
-
-        }
-    }*/
     public Donuts getDonutOrder(StringTokenizer st){
 
         Donuts donut;

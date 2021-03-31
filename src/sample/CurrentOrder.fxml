@@ -26,7 +26,7 @@
                   <Insets left="10.0" top="150.0" />
                </FlowPane.margin>
                <children>
-                  <Button fx:id="add" mnemonicParsing="false" onAction="#dowork" prefHeight="26.0" prefWidth="63.0" text="Order" GridPane.rowIndex="3" />
+                  <Button fx:id="add" mnemonicParsing="false" onAction="#show" prefHeight="26.0" prefWidth="63.0" text="Order" GridPane.rowIndex="3" />
                   <Button fx:id="remove" mnemonicParsing="false" onAction="#remove" prefHeight="28.0" prefWidth="63.0" text="Remove">
                      <GridPane.margin>
                         <Insets top="-60.0" />
