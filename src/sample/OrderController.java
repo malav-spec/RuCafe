@@ -22,7 +22,7 @@ public class OrderController {
     public void show(){
         ArrayList<String> strList=currentOrder.makeAL();
         orderList.setItems(FXCollections.observableArrayList(strList));
-        totalBox.setText(""+currentOrder.getTotal());
+        totalBox.setText(""+currentOrder.getTotalWithTax());
     }
     public void addDonut() throws Exception{
         Parent root = FXMLLoader.load(getClass().getResource("Donut.fxml"));
@@ -53,7 +53,7 @@ public class OrderController {
         currentOrder.remove(index);
         ArrayList<String> strList=currentOrder.makeAL();
         orderList.setItems(FXCollections.observableArrayList(strList));
-        totalBox.setText(""+currentOrder.getTotal());
+        totalBox.setText(""+currentOrder.getTotalWithTax());
 
     }
     private void updateTotal(String str){

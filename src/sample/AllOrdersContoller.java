@@ -36,7 +36,7 @@ public class AllOrdersContoller {
         }
         if(currentOrder.getTotal()==0.0)
             return;
-        str=str+"Total Amount = "+currentOrder.getTotal()+"\n";
+        str=str+"Total Amount = "+currentOrder.getTotalWithTax()+"\n";
         allOrder.add(str);
     }
 
