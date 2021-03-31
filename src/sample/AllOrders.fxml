@@ -25,13 +25,13 @@
                         <Insets left="10.0" top="150.0" />
                     </FlowPane.margin>
                     <children>
-                        <Button fx:id="add" mnemonicParsing="false" onAction="#show" prefHeight="26.0" prefWidth="63.0" text="Order" GridPane.rowIndex="2" />
+                        <Button fx:id="add" mnemonicParsing="false" onAction="#show" prefHeight="26.0" prefWidth="63.0" text="Export" GridPane.rowIndex="2" />
                         <Button fx:id="remove" mnemonicParsing="false" onAction="#remove" prefHeight="28.0" prefWidth="97.0" text="Cancel Order">
                             <GridPane.margin>
                                 <Insets top="-60.0" />
                             </GridPane.margin>
                         </Button>
-                        <Button mnemonicParsing="false" onAction="#MainScreen" text="New Order" GridPane.rowIndex="1" fx:id="change"/>
+                        <Button fx:id="change" mnemonicParsing="false" onAction="#MainScreen" text="New Order" GridPane.rowIndex="1" />
                     </children>
                 </GridPane>
                 <ListView fx:id="orderList" prefHeight="326.0" prefWidth="230.0">

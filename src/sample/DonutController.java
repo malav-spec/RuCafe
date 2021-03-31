@@ -8,8 +8,6 @@ import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.stage.Stage;
 import model.Donuts;
-
-
 import java.util.ArrayList;
 import java.util.StringTokenizer;
 
