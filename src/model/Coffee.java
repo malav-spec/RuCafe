@@ -2,42 +2,87 @@ package model;
 
 public class Coffee extends MenuItem implements Customizable{
 
+    /**
+     * Used to represent size of coffee
+     */
     private String size = "";
+    /**
+     * Used to represent number of add in for coffee
+     */
     private int num_add_in = 0;
+    /**
+     * Used to represent add in for coffee
+     */
     private String[] addIn = new String[5];//List for all the addIn
 
+    /**
+     * Constructor for Coffee
+     */
     public Coffee() {
     }
 
+    /**
+     * Used to increase addin
+     * @param add Value of add in
+     */
     public void increaseAddOn(String add){
         addIn[num_add_in] = add;
         num_add_in += 1;
     }
 
+    /**
+     * used to get Addin list
+     * @return Array of String for add in
+     */
     public String[] getAddInList(){
         return addIn;
     }
 
+    /**
+     * Used to get size of coffee
+     * @return Size of coffee
+     */
     public String getSize(){
         return size;
     }
 
+    /**
+     * Used to get Number of add in
+     * @return Number of add in
+     */
     public int getNum_add_in(){
         return num_add_in;
     }
 
+    /**
+     * Used to Set size
+     * @param s Size of coffee
+     */
     public void setSize(String s){
         size = s;
     }
 
+    /**
+     * Used to set Add in
+     * @param num Number of add in
+     */
     public void setAddOn(int num){
         num_add_in = num;
     }
 
+    /**
+     * Used to round of price of item
+     * @param number Amount which we want to round off
+     * @return Round off value
+     */
     public double roundOff(double number){ //rounds off a number to two decimal places
         return Math.round(number * 100.0) / 100.0;
     }
 
+    /**
+     * Used to get item price for coffee
+     * @return Price according to size
+     */
     public double itemPrice(){
 
         double size_price = 0;
@@ -60,18 +105,30 @@ public class Coffee extends MenuItem implements Customizable{
         return size_price + add_in_cost;
     }
 
-
+    /**
+     * Used to return price as a String
+     * @return Item price as String
+     */
     @Override
     public String toString(){
         return "$"+roundOff(itemPrice());
     }
 
+    /**
+     * Used to add item to order
+     * @param obj Item Which we want to ass
+     * @return True if item is added else False
+     */
     @Override
     public boolean add(Object obj) {
 
         return false;
     }
 
+    /**
+     * Used to get details for coffee
+     * @return String as details for coffee
+     */
     @Override
     public String getDetails(){
         String tostr= size + ", ";
@@ -82,6 +139,12 @@ public class Coffee extends MenuItem implements Customizable{
         return tostr;
 
     }
+
+    /**
+     * Used to items from order
+     * @param obj Items which we want to remove
+     * @return Boolean value
+     */
     @Override
     public boolean remove(Object obj) {
         return false;
