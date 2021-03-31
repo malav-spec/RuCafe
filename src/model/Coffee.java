@@ -1,5 +1,9 @@
 package model;
 
+/**
+ * Used to represent Coffee Object
+ * @author Malav Doshi and Herik Patel
+ */
 public class Coffee extends MenuItem implements Customizable{
 
     /**

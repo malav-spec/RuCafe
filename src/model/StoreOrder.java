@@ -1,7 +1,10 @@
 package model;
 
 import java.util.ArrayList;
-
+/**
+ * Used to represent all orders
+ * @author Malav Doshi and Herik Patel
+ */
 public class StoreOrder implements Customizable{
     /**
      * Used to represent Order Number

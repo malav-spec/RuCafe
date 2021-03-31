@@ -1,7 +1,10 @@
 package model;
 
 import java.util.ArrayList;
-
+/**
+ * Used to represent Current order
+ * @author Malav Doshi and Herik Patel
+ */
 public class Order implements Customizable {
     /**
      * Represent Order number

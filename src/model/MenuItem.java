@@ -1,5 +1,8 @@
 package model;
-
+/**
+ * Used to represent MenuItems
+ * @author Malav Doshi and Herik Patel
+ */
 public class MenuItem {
 
     /**

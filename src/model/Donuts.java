@@ -1,7 +1,9 @@
 package model;
-
 import java.util.ArrayList;
-
+/**
+ * Used to represent Donut Object
+ * @author Malav Doshi and Herik Patel
+ */
 public class Donuts extends MenuItem implements Customizable{
 
     /**
