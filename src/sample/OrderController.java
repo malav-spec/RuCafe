@@ -34,7 +34,7 @@ public class OrderController {
     }
 
     public void addCoffee() throws Exception{
-        Parent root = FXMLLoader.load(getClass().getResource("AllOrders.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("Coffee.fxml"));
         Stage window=(Stage) add.getScene().getWindow();
         Scene scene = new Scene(root, 750, 600);
         scene.getStylesheets().add(getClass().getResource("MainWindow.css").toExternalForm());

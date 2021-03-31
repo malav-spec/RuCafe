@@ -43,7 +43,7 @@
          <center>
             <FlowPane prefHeight="228.0" prefWidth="738.0" BorderPane.alignment="CENTER">
                <children>
-                  <Button id="coffeeButton" fx:id="orderCoffee" mnemonicParsing="false" prefHeight="140.0" prefWidth="327.0" text="Order Coffee">
+                  <Button id="coffeeButton" fx:id="orderCoffee" mnemonicParsing="false" prefHeight="140.0" prefWidth="327.0" text="Order Coffee" onAction="#goToCoffee">
                   <graphic>
                      <ImageView fitHeight="146.0" fitWidth="211.0" pickOnBounds="true" preserveRatio="true">
                   <image>
@@ -58,7 +58,7 @@
                         <Font size="15.0" />
                      </font>
                   </Button>
-                  <Button fx:id="orderDonut" mnemonicParsing="false" prefHeight="140.0" prefWidth="299.0" text="Order Donuts">
+                  <Button fx:id="orderDonut" mnemonicParsing="false" prefHeight="140.0" prefWidth="299.0" text="Order Donuts" onAction="#goToDonut">
                   <graphic>
                      <ImageView fitHeight="105.0" fitWidth="193.0" pickOnBounds="true" preserveRatio="true">
                         <image>
@@ -81,17 +81,17 @@
                         <Insets left="280.0" top="70.0" />
                      </FlowPane.margin>
                   </Label>
-                  <ChoiceBox fx:id="ordersBox" prefWidth="150.0">
+                  <ComboBox fx:id="ordersBox" prefWidth="150.0" onAction="#choiceOfOrder">
                      <items>
                         <FXCollections fx:factory="observableArrayList">
-                           <String fx:id="prev_orders" fx:value="Previous Orders" />
+                           <String fx:id="prev_orders" fx:value="Previous Orders"  />
                            <String fx:id="current_order" fx:value="Current Order" />
                         </FXCollections>
                      </items>
                      <FlowPane.margin>
                         <Insets left="285.0" top="20.0" />
                      </FlowPane.margin>
-                  </ChoiceBox>
+                  </ComboBox>
                </children>
                <BorderPane.margin>
                   <Insets left="10.0" />
