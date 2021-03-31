@@ -10,6 +10,11 @@ import java.util.ArrayList;
 import java.util.StringTokenizer;
 import static sample.Main.currentOrder;
 
+/**
+ * Used to represent Controller for Current order GUI
+ * @author Malav Doshi and Herik Patel
+ */
+
 public class OrderController {
     /**
      * Represents Button for GUI

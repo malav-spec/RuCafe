@@ -16,7 +16,10 @@ import java.util.ArrayList;
 import static sample.Main.allOrder;
 import static sample.Main.currentOrder;
 
-
+/**
+ * Used to represent Controller for all orders GUI
+ * @author Malav Doshi and Herik Patel
+ */
 public class AllOrdersContoller {
     /**
      * Used to add values to Listview

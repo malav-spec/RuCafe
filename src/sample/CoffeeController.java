@@ -9,11 +9,13 @@ import javafx.scene.image.ImageView;
 import javafx.stage.Stage;
 import model.Coffee;
 import static sample.Main.currentOrder;
-
 import java.io.File;
 import java.net.MalformedURLException;
-import java.util.ArrayList;
 
+/**
+ * Used to represent Controller for Coffee GUI
+ * @author Malav Doshi and Herik Patel
+ */
 public class CoffeeController {
 
     Coffee coffeeOrder = new Coffee();

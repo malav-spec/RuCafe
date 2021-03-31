@@ -10,38 +10,73 @@ import javafx.stage.Stage;
 import model.Donuts;
 import java.util.ArrayList;
 import java.util.StringTokenizer;
-
 import static sample.Main.currentOrder;
 
+/**
+ * Used to represent Controller for Donut GUI
+ * @author Malav Doshi and Herik Patel
+ */
 public class DonutController {
-
+    /**
+     * Used to represent Donut object
+     */
     Donuts donutOrder = new Donuts();
+    /**
+     * Used to represent combo box for GUI
+     */
     @FXML
     private ComboBox flavorBox;
-
+    /**
+     * Used to represent combo box for GUI
+     */
     @FXML
     private ComboBox typeBox;
-
+    /**
+     * Used to represent Spinner for GUI
+     */
     @FXML
     private Spinner quantSpinner;
-
+    /**
+     * Used to represent Button for GUI
+     */
     @FXML
     private Button add, remove;
-
+    /**
+     * Used to represent List view for GUI
+     */
     @FXML
     private ListView orderList;
-
+    /**
+     * Used to represent Text field for GUI
+     */
     @FXML
     private TextField subtotal, totalBox;
-
+    /**
+     * Used to represent yeast donut flavors
+     */
     private final String[] yeastFlavors = {"Strawberry-Filled","Cinnamon","Chocolate-Frosted"};
+    /**
+     * Used to represent donut holes flavors
+     */
     private final String[] holesFlavors = {"Jelly", "Marble-Frosted", "Apple-Crumb", "Boston Kreme"};
+
+    /**
+     * Used to represent cake flavors
+     */
     private final String[] cakeFlavors = {"Blueberry","Classic Glazed","Maple Bacon","Red Velvet","Mint Chocolate","Hibiscus"};
 
+    /**
+     * Used to represent Order List
+     */
     private final ArrayList<String> orders = new ArrayList();
+    /**
+     * Used to represent Order prices
+     */
     private final ArrayList<Double> orderPrices = new ArrayList<>();
 
-
+    /**
+     * Used to set total amount for the order
+     */
     @FXML
     public void getTotal(){
 
@@ -64,6 +99,9 @@ public class DonutController {
         subtotal.setText(donutOrder.toString());
     }
 
+    /**
+     * Used to add items from order to list
+     */
     @FXML
     public void addToList(){
         orders.add(donutOrder.getDetails());
@@ -72,11 +110,18 @@ public class DonutController {
         totalBox.setText(getSubTotal());
     }
 
+    /**
+     * Used to set flavor for donut
+     */
     @FXML
     public void setFlavor(){
         donutOrder.setFlavor((String)flavorBox.getValue());
     }
 
+    /**
+     * Used to add to current order
+     * @throws Exception Throws scene not found exception
+     */
     @FXML
     public void addToOrder()throws Exception{
         for(int i = 0; i < orders.size(); i++){
@@ -98,8 +143,12 @@ public class DonutController {
 
     }
 
+    /**
+     * Used to get Donut object from order
+     * @param st String tokenizer
+     * @return Donut object reference
+     */
     public Donuts getDonutOrder(StringTokenizer st){
-
         Donuts donut;
         String dType = "", dFlavor = "";
         int quantity = 0;
@@ -116,6 +165,10 @@ public class DonutController {
         return donut;
     }
 
+    /**
+     * Used to get total for order
+     * @return String value for total
+     */
     public String getSubTotal(){
         int i;
         double sum = 0;
@@ -127,6 +180,9 @@ public class DonutController {
         return "$ " + sum;
     }
 
+    /**
+     * Used to remove an item from list
+     */
     @FXML
     public void removeFromList(){
 
