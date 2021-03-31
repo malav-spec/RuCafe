@@ -11,6 +11,7 @@ import model.Donuts;
 import java.util.ArrayList;
 import java.util.StringTokenizer;
 
+import static sample.Main.allOrder;
 import static sample.Main.currentOrder;
 
 public class OrderController {
@@ -29,13 +30,19 @@ public class OrderController {
     public void addDonut() throws Exception{
         Parent root = FXMLLoader.load(getClass().getResource("Donut.fxml"));
         Stage window=(Stage) add.getScene().getWindow();
-        window.setScene(new Scene(root,750,500));
+        Scene scene = new Scene(root, 750, 600);
+        scene.getStylesheets().add(getClass().getResource("MainWindow.css").toExternalForm());
+        window.setScene(scene);
+        window.show();
     }
 
     public void addCoffee() throws Exception{
         Parent root = FXMLLoader.load(getClass().getResource("Coffee.fxml"));
         Stage window=(Stage) add.getScene().getWindow();
-        window.setScene(new Scene(root,750,500));
+        Scene scene = new Scene(root, 750, 600);
+        scene.getStylesheets().add(getClass().getResource("MainWindow.css").toExternalForm());
+        window.setScene(scene);
+        window.show();
     }
 
     public void remove(){
