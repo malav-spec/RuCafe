@@ -2,7 +2,11 @@ package sample;
 
 import javafx.collections.FXCollections;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.*;
+import javafx.stage.Stage;
 import model.Donuts;
 
 
@@ -65,7 +69,6 @@ public class DonutController {
     @FXML
     public void addToList(){
         orders.add(donutOrder.getDetails());
-        Donuts copyDonut= new Donuts();
         orderList.setItems(FXCollections.observableArrayList(orders));
         orderPrices.add(donutOrder.itemPrice());
         totalBox.setText(getSubTotal());
@@ -77,22 +80,37 @@ public class DonutController {
     }
 
     @FXML
-    public void addToOrder(){
+    public void addToOrder()throws Exception{
         for(int i = 0; i < orders.size(); i++){
 
 
             StringTokenizer st = new StringTokenizer(orders.get(i).replaceAll("\\s", ""), ",");
             Donuts donut = getDonutOrder(st);
-
             currentOrder.add(donut);
-
         }
+        //addToCurrentOrder();
         String stringTotal=getSubTotal();
-        currentOrder.setTotal(Double.parseDouble(stringTotal.substring(1)));
+        currentOrder.setTotal(currentOrder.getTotal()+Double.parseDouble(stringTotal.substring(1)));
+        Parent root = FXMLLoader.load(getClass().getResource("CurrentOrder.fxml"));
+        Stage window=(Stage) add.getScene().getWindow();
+        window.setScene(new Scene(root,750,500));
+
 
     }
 
+/*
+    private void addToCurrentOrder(){
+        for(int i=0;i<orders.size();i++){
+            Donuts temp = new Donuts();
+            StringTokenizer st = new StringTokenizer(orders.get(i), ",");
+            temp.setType(st.nextToken());
+            temp.setFlavor(st.nextToken());
+            temp.setQuantity(Integer.parseInt(st.nextToken()));
+            currentOrder.add(temp);
 
+
+        }
+    }*/
     public Donuts getDonutOrder(StringTokenizer st){
 
         Donuts donut;

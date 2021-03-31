@@ -1,16 +1,18 @@
 package sample;
 import javafx.fxml.FXML;
-import javafx.scene.control.ComboBox;
-import javafx.scene.control.CheckBox;
-import javafx.scene.control.Label;
-import javafx.scene.control.TextField;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
+import javafx.scene.control.*;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.stage.Stage;
 import model.Coffee;
 import static sample.Main.currentOrder;
 
 import java.io.File;
 import java.net.MalformedURLException;
+import java.util.ArrayList;
 
 public class CoffeeController {
 
@@ -30,6 +32,9 @@ public class CoffeeController {
 
     @FXML
     private Label sizeLabel;
+
+    @FXML
+    private Button add;
 
     private double total;
     private int number = 0;
@@ -138,5 +143,15 @@ public class CoffeeController {
 
         subtotal.setText(coffeeOrder.toString());
     }
+
+    @FXML
+    public void addOrder()throws Exception{
+    currentOrder.add(coffeeOrder);
+    ArrayList<String> temp = currentOrder.makeAL();
+    Parent root = FXMLLoader.load(getClass().getResource("CurrentOrder.fxml"));
+    Stage window=(Stage) add.getScene().getWindow();
+    window.setScene(new Scene(root,750,500));
+    }
+
 
 }
