@@ -4,30 +4,24 @@ import java.util.ArrayList;
 
 public class StoreOrder implements Customizable{
 
-    private ArrayList<Order> orders = new ArrayList<>();
+    private ArrayList<String> orders = new ArrayList();
     private int numOrders;
 
     @Override
     public boolean add(Object obj) {
 
-        if(obj instanceof Order){
-            Order ord = (Order) obj;
-            orders.add(ord);
-            numOrders++;
-            return true;
-        }
-        return false;
+        String ord = (String) obj;
+        orders.add(ord);
+        return true;
+    }
+
+    public ArrayList<String> makeAL(){
+    return orders;
     }
 
     @Override
     public boolean remove(Object obj) {
-
-        if(obj instanceof Order){
-            Order ord = (Order) obj;
-            orders.remove(ord);
-            numOrders--;
-            return true;
-        }
-        return false;
+        orders.remove(Integer.parseInt(obj.toString()));
+        return true;
     }
 }

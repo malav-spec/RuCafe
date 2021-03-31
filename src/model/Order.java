@@ -1,6 +1,5 @@
 package model;
 
-import java.awt.*;
 import java.util.ArrayList;
 
 public class Order implements Customizable {
@@ -23,7 +22,7 @@ public class Order implements Customizable {
     public double getTotal() {
         return total;
     }
-     public void setTotal(double total){
+    public void setTotal(double total){
         this.total=total;
      }
 
@@ -49,19 +48,6 @@ public class Order implements Customizable {
         System.out.println(Integer.parseInt(obj.toString()));
         itemsList.remove(Integer.parseInt(obj.toString()));
         return true;
-        /*
-        if (obj instanceof Coffee) {
-            MenuItem coffeeItem = (MenuItem) obj;
-            int index = find(coffeeItem);
-            itemsList.remove(index);
-            return true;
-        } else if (obj instanceof Donuts) {
-            MenuItem donut = (MenuItem) obj;
-            int index = find(donut);
-            itemsList.remove(index);
-            return true;
-        }
-        return false;*/
     }
 
     public ArrayList<String> makeAL() {
@@ -73,21 +59,14 @@ public class Order implements Customizable {
         return orders;
     }
 
-    private int find(MenuItem obj) {
-        for (int i = 0; i < itemsList.size(); i++) {
-            if (itemsList.get(i).getType().equals(obj.getType())) {
-                if (itemsList.get(i).getFlavor().equals(obj.getFlavor())) {
-                    System.out.println(itemsList.get(i).getPrice());
-                    System.out.println(obj.getPrice());
-                    if (itemsList.get(i).getPrice().equals(obj.getPrice())) {
-                        if (itemsList.get(i).getQuantity() == obj.getQuantity()) {
-                            return i;
-                        }
-                    }
-                }
-            }
-        }
-        return -1;
-
+    public void clearAll(){
+        itemsList.clear();
+        this.total=0.0;
     }
+
+    public Order cloneOrder(Order ord) throws CloneNotSupportedException {
+        return (Order) ord.clone();
+    }
+
+
 }

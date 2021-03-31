@@ -73,7 +73,19 @@ public class Coffee extends MenuItem implements Customizable{
     }
 
     @Override
+    public String getDetails(){
+        String tostr= size + ", ";
+        for(int i=0;i<num_add_in;i++){
+            tostr=tostr+addIn[i]+", ";
+        }
+        tostr=tostr+itemPrice();
+        return tostr;
+
+    }
+    @Override
     public boolean remove(Object obj) {
         return false;
     }
+
+
 }
