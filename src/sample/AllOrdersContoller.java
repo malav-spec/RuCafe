@@ -32,8 +32,7 @@ public class AllOrdersContoller {
     @FXML
     private Button add,change;
 
-    public void show(){
-
+    public void initialize(){
         addToAllOrders();
         currentOrder.clearAll();
         ArrayList<String> temp = allOrder.makeAL();
@@ -108,7 +107,6 @@ public class AllOrdersContoller {
         addToAllOrders();
         ArrayList<String> temp = allOrder.makeAL();
         orderList.setItems(FXCollections.observableArrayList(temp));
-
     }
 
     /**
@@ -116,12 +114,8 @@ public class AllOrdersContoller {
      * @throws Exception throws Scene not found exception
      */
     public void MainScreen()throws Exception{
-        Parent root = FXMLLoader.load(getClass().getResource("sample.fxml"));
-        Stage window=(Stage) change.getScene().getWindow();
-        Scene scene = new Scene(root, 750, 600);
-        scene.getStylesheets().add(getClass().getResource("MainWindow.css").toExternalForm());
-        window.setScene(scene);
-        window.show();
+        Stage stage=(Stage) add.getScene().getWindow();
+        stage.close();
     }
 
 }

@@ -38,20 +38,32 @@ public class Controller {
      */
     public void choiceOfOrder() throws Exception{
         if(ordersBox.getValue().equals("Current Order")){
-            Parent root = FXMLLoader.load(getClass().getResource("CurrentOrder.fxml"));
-            Stage window=(Stage) orderCoffee.getScene().getWindow();
-            Scene scene = new Scene(root, 750, 600);
-            scene.getStylesheets().add(getClass().getResource("MainWindow.css").toExternalForm());
-            window.setScene(scene);
-            window.show();
+            try {
+                FXMLLoader fxmlLoader = new FXMLLoader();
+                fxmlLoader.setLocation(getClass().getResource("CurrentOrder.fxml"));
+                Scene scene = new Scene(fxmlLoader.load(), 750, 600);
+                scene.getStylesheets().add(getClass().getResource("MainWindow.css").toExternalForm());
+                Stage stage = new Stage();
+                stage.setTitle("Order Donuts");
+                stage.setScene(scene);
+                stage.show();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
         }
         else if(ordersBox.getValue().equals("Previous Orders")){
-            Parent root = FXMLLoader.load(getClass().getResource("AllOrders.fxml"));
-            Stage window=(Stage) orderCoffee.getScene().getWindow();
-            Scene scene = new Scene(root, 750, 600);
-            scene.getStylesheets().add(getClass().getResource("MainWindow.css").toExternalForm());
-            window.setScene(scene);
-            window.show();
+            try {
+                FXMLLoader fxmlLoader = new FXMLLoader();
+                fxmlLoader.setLocation(getClass().getResource("AllOrders.fxml"));
+                Scene scene = new Scene(fxmlLoader.load(), 750, 600);
+                scene.getStylesheets().add(getClass().getResource("MainWindow.css").toExternalForm());
+                Stage stage = new Stage();
+                stage.setTitle("Order Donuts");
+                stage.setScene(scene);
+                stage.show();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
         }
     }
 

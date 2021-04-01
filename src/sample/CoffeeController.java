@@ -150,12 +150,8 @@ public class CoffeeController {
     public void addOrder()throws Exception{
     currentOrder.add(coffeeOrder);
     currentOrder.setTotal(Double.parseDouble(coffeeOrder.toString().substring(1))+ currentOrder.getTotal());
-    Parent root = FXMLLoader.load(getClass().getResource("sample.fxml"));
-    Stage window=(Stage) add.getScene().getWindow();
-    Scene scene = new Scene(root, 750, 600);
-    scene.getStylesheets().add(getClass().getResource("MainWindow.css").toExternalForm());
-    window.setScene(scene);
-    window.show();
+    Stage stage=(Stage) add.getScene().getWindow();
+    stage.close();
     }
 
 

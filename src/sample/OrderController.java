@@ -35,10 +35,14 @@ public class OrderController {
     /**
      * Used to show data in Listview
      */
-    public void show(){
+    public void initialize(){
         ArrayList<String> strList=currentOrder.makeAL();
         orderList.setItems(FXCollections.observableArrayList(strList));
         totalBox.setText(""+currentOrder.getTotalWithTax());
+    }
+
+    public void show(){
+
     }
 
     /**
@@ -74,7 +78,6 @@ public class OrderController {
         if(orderList.getSelectionModel().getSelectedItem() == null){
             return;
         }
-        String removeOrder = orderList.getSelectionModel().getSelectedItem().toString();
         String index = ""+orderList.getSelectionModel().getSelectedIndex();
         String removeItem= orderList.getSelectionModel().getSelectedItem().toString();
         updateTotal(removeItem);

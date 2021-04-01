@@ -133,12 +133,8 @@ public class DonutController {
         }
         String stringTotal=getSubTotal();
         currentOrder.setTotal(currentOrder.getTotal()+Double.parseDouble(stringTotal.substring(1)));
-        Parent root = FXMLLoader.load(getClass().getResource("sample.fxml"));
-        Stage window=(Stage) add.getScene().getWindow();
-        Scene scene = new Scene(root, 750, 600);
-        scene.getStylesheets().add(getClass().getResource("MainWindow.css").toExternalForm());
-        window.setScene(scene);
-        window.show();
+        Stage stage=(Stage) add.getScene().getWindow();
+        stage.close();
 
 
     }
