@@ -9,6 +9,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
 import javafx.stage.Stage;
 
+import java.io.IOException;
 
 
 /**
@@ -59,24 +60,36 @@ public class Controller {
      * @throws Exception Throws scene not found exception
      */
     public void goToCoffee()throws Exception{
-        Parent root = FXMLLoader.load(getClass().getResource("Coffee.fxml"));
-        Stage window=(Stage) orderCoffee.getScene().getWindow();
-        Scene scene = new Scene(root, 750, 600);
-        scene.getStylesheets().add(getClass().getResource("MainWindow.css").toExternalForm());
-        window.setScene(scene);
-        window.show();
+        try {
+            FXMLLoader fxmlLoader = new FXMLLoader();
+            fxmlLoader.setLocation(getClass().getResource("Coffee.fxml"));
+            Scene scene = new Scene(fxmlLoader.load(), 750, 600);
+            scene.getStylesheets().add(getClass().getResource("MainWindow.css").toExternalForm());
+            Stage stage = new Stage();
+            stage.setTitle("Order Coffee");
+            stage.setScene(scene);
+            stage.show();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
     /**
      * Used to go to Donut GUI
      * @throws Exception Throws scene not found exception
      */
-    public void goToDonut()throws Exception{
-        Parent root = FXMLLoader.load(getClass().getResource("Donut.fxml"));
-        Stage window=(Stage) orderDonut.getScene().getWindow();
-        Scene scene = new Scene(root, 750, 600);
-        scene.getStylesheets().add(getClass().getResource("MainWindow.css").toExternalForm());
-        window.setScene(scene);
-        window.show();
+    public void goToDonut()throws Exception {
+        try {
+            FXMLLoader fxmlLoader = new FXMLLoader();
+            fxmlLoader.setLocation(getClass().getResource("Donut.fxml"));
+            Scene scene = new Scene(fxmlLoader.load(), 750, 600);
+            scene.getStylesheets().add(getClass().getResource("MainWindow.css").toExternalForm());
+            Stage stage = new Stage();
+            stage.setTitle("Order Donuts");
+            stage.setScene(scene);
+            stage.show();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
 }
