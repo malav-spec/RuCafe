@@ -3,9 +3,7 @@ package sample;
 
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
-import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
 import javafx.stage.Stage;
 
@@ -22,15 +20,6 @@ public class Controller {
      */
     @FXML
     private ComboBox ordersBox;
-    /**
-     * Represent Button for GUI
-     */
-    @FXML
-    private Button orderCoffee,orderDonut;
-
-    private void loadSceneAndSendMessage(){
-
-    }
 
     /**
      * Used choose option from Combobox
@@ -69,9 +58,8 @@ public class Controller {
 
     /**
      * Used to go to Coffee GUI
-     * @throws Exception Throws scene not found exception
      */
-    public void goToCoffee()throws Exception{
+    public void goToCoffee(){
         try {
             FXMLLoader fxmlLoader = new FXMLLoader();
             fxmlLoader.setLocation(getClass().getResource("Coffee.fxml"));
@@ -87,9 +75,8 @@ public class Controller {
     }
     /**
      * Used to go to Donut GUI
-     * @throws Exception Throws scene not found exception
      */
-    public void goToDonut()throws Exception {
+    public void goToDonut(){
         try {
             FXMLLoader fxmlLoader = new FXMLLoader();
             fxmlLoader.setLocation(getClass().getResource("Donut.fxml"));
