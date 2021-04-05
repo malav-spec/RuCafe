@@ -17,30 +17,61 @@ public class CoffeeController {
 
     Coffee coffeeOrder = new Coffee();
 
+    /**
+     * A Combo box for selecting sizes
+     */
     @FXML
     private ComboBox sizeBox;
 
+    /**
+     * Multiple checkbox for selecting add ins
+     */
     @FXML
     private CheckBox cream, milk, syrup, caramel, whippCream;
 
+    /**
+     * Textfield to show sub total for coffee
+     */
     @FXML
     private TextField subtotal;
 
+    /**
+     * Imageview to display images
+     */
     @FXML
     private ImageView images;
 
+    /**
+     * Label to describe the image above it
+     */
     @FXML
     private Label sizeLabel;
 
+    /**
+     * Add button to add coffee order  to the main order
+     */
     @FXML
     private Button add;
 
-    private double total;
+    /**
+     * counter for image number
+     */
     private int number = 0;
+
+    /**
+     * Array of image object
+     */
     private Image image[];
+
+    /**
+     * Counter that checks if it is the first time the image view is displayed
+     */
     private int first = 0;
 
 
+    /**
+     * Display images as a slide show
+     */
     @FXML
     public void displayImages(){
          image = new Image[4];
@@ -63,6 +94,9 @@ public class CoffeeController {
 
     }
 
+    /**
+     * Go to next image
+     */
     @FXML
     public void nextImage(){
 
@@ -83,6 +117,9 @@ public class CoffeeController {
         setLabel();
     }
 
+    /**
+     * Go to previous image
+     */
     @FXML
     public void prevImage(){
 
@@ -103,6 +140,9 @@ public class CoffeeController {
     }
 
 
+    /**
+     * Set label for every image change
+     */
     public void setLabel(){
         if(number == 1){
             sizeLabel.setText("Short size");
@@ -115,12 +155,14 @@ public class CoffeeController {
         }
     }
 
+    /**
+     * Used to get the total for the coffee order
+     */
     @FXML
     public void getTotal(){
 
         subtotal.clear();
         subtotal.setEditable(false);
-        total = 0;
         coffeeOrder.setAddOn(0);
         coffeeOrder.setSize((String) sizeBox.getValue());
 
@@ -143,19 +185,21 @@ public class CoffeeController {
         subtotal.setText(coffeeOrder.toString());
     }
 
+    /**
+     * Adds the current coffee order to the main order
+     */
     @FXML
-    public void addOrder()throws Exception{
+    public void addOrder(){
         if(sizeBox.getValue() == null){
             Alert a = new Alert(Alert.AlertType.WARNING);
             a.setContentText("Select a size first");
             a.show();
             return;
         }
-    currentOrder.add(coffeeOrder);
-//    double q = Double.parseDouble(coffeeOrder.toString().substring(1))+ currentOrder.getTotal();
-    currentOrder.setTotal(coffeeOrder.getPrice());
-    Stage stage=(Stage) add.getScene().getWindow();
-    stage.close();
+        currentOrder.add(coffeeOrder);
+        currentOrder.setTotal(coffeeOrder.getPrice());
+        Stage stage=(Stage) add.getScene().getWindow();
+        stage.close();
     }
 
 

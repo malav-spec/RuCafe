@@ -92,7 +92,7 @@ public class Coffee extends MenuItem implements Customizable{
         double size_price = 0;
 
         if(size == null){
-            size_price = 0.0;
+         size_price = 0.0;
         }
         else if(size.equals("Short")){
             size_price = 1.99;
