@@ -8,6 +8,8 @@ import javafx.scene.control.*;
 import javafx.stage.Stage;
 import java.util.ArrayList;
 import java.util.StringTokenizer;
+
+import static sample.Main.allOrder;
 import static sample.Main.currentOrder;
 
 /**
@@ -38,11 +40,29 @@ public class OrderController {
     public void initialize(){
         ArrayList<String> strList=currentOrder.makeAL();
         orderList.setItems(FXCollections.observableArrayList(strList));
-        totalBox.setText(""+currentOrder.getTotalWithTax());
+        totalBox.appendText("Total amount= $"+currentOrder.getTotalWithTax());
     }
 
     public void show(){
+        addToAllOrders();
+        currentOrder.clearAll();
+        Stage stage=(Stage) add.getScene().getWindow();
+        stage.close();
+    }
 
+    /**
+     * Used to add data to stores order
+     */
+    private void addToAllOrders(){
+        ArrayList<String> temp = currentOrder.makeAL();
+        String str = "";
+        for(int i=0;i<temp.size();i++){
+            str=str+temp.get(i)+"\n";
+        }
+        if(currentOrder.getTotal()==0.0)
+            return;
+        str=str+"Total Amount = $"+currentOrder.getTotalWithTax()+"\n";
+        allOrder.add(str);
     }
 
     /**

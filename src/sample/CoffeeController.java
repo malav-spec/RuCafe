@@ -197,7 +197,7 @@ public class CoffeeController {
             return;
         }
         currentOrder.add(coffeeOrder);
-        currentOrder.setTotal(coffeeOrder.getPrice());
+        currentOrder.setTotal(Double.parseDouble(coffeeOrder.toString().substring(1))+ currentOrder.getTotal());
         Stage stage=(Stage) add.getScene().getWindow();
         stage.close();
     }

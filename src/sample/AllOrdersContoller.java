@@ -2,6 +2,9 @@ package sample;
 
 import javafx.collections.FXCollections;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.ListView;
 import javafx.stage.FileChooser;
@@ -11,7 +14,6 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
 import static sample.Main.allOrder;
-import static sample.Main.currentOrder;
 
 /**
  * Used to represent Controller for all orders GUI
@@ -30,26 +32,11 @@ public class AllOrdersContoller {
     private Button add,change;
 
     public void initialize(){
-        addToAllOrders();
-        currentOrder.clearAll();
         ArrayList<String> temp = allOrder.makeAL();
         orderList.setItems(FXCollections.observableArrayList(temp));
     }
 
-    /**
-     * Used to add data to stores order
-     */
-    private void addToAllOrders(){
-        ArrayList<String> temp = currentOrder.makeAL();
-        String str = "";
-        for(int i=0;i<temp.size();i++){
-            str=str+temp.get(i)+"\n";
-        }
-        if(currentOrder.getTotal()==0.0)
-            return;
-        str=str+"Total Amount = "+currentOrder.getTotalWithTax()+"\n";
-        allOrder.add(str);
-    }
+
 
     /**
      * Used to export all orders to a file
@@ -101,10 +88,11 @@ public class AllOrdersContoller {
         }
         String index = ""+orderList.getSelectionModel().getSelectedIndex();
         allOrder.remove(index);
-        addToAllOrders();
         ArrayList<String> temp = allOrder.makeAL();
         orderList.setItems(FXCollections.observableArrayList(temp));
     }
+
+
 
     /**
      * Used to navigate back to main screen

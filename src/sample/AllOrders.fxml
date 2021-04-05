@@ -39,14 +39,6 @@
                         <Insets top="25.0" />
                     </FlowPane.margin>
                 </ListView>
-                <Label text="Total Amount" textFill="#f2efef">
-                    <font>
-                        <Font size="15.0" />
-                    </font>
-                    <FlowPane.margin>
-                        <Insets left="20.0" top="30.0" />
-                    </FlowPane.margin>
-                </Label>
             </children>
         </FlowPane>
     </center>

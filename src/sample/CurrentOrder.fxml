@@ -41,7 +41,7 @@
                   <Insets top="25.0" />
                </FlowPane.margin>
             </ListView>
-            <Label text="Total Amount" textFill="#f2efef">
+            <Label text="Total Amount With Tax" textFill="#f2efef">
                <font>
                   <Font size="15.0" />
                </font>
@@ -49,7 +49,7 @@
                   <Insets left="20.0" top="30.0" />
                </FlowPane.margin>
             </Label>
-            <TextField fx:id="totalBox" prefHeight="37.0" prefWidth="150.0">
+            <TextField fx:id="totalBox" prefHeight="47.0" prefWidth="150.0" editable="false" >
                <FlowPane.margin>
                   <Insets left="10.0" top="30.0" />
                </FlowPane.margin>
