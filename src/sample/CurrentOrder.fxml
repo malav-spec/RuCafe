@@ -32,8 +32,8 @@
                         <Insets top="-60.0" />
                      </GridPane.margin>
                   </Button>
-                  <Button mnemonicParsing="false" text="Add Donuts" GridPane.rowIndex="1" onAction="#addDonut"/>
-                  <Button mnemonicParsing="false" text="Add Coffee" GridPane.rowIndex="2" onAction="#addCoffee" />
+                  <Button mnemonicParsing="false" onAction="#addDonut" text="Add Donuts" GridPane.rowIndex="1" />
+                  <Button mnemonicParsing="false" onAction="#addCoffee" text="Add Coffee" GridPane.rowIndex="2" />
                </children>
             </GridPane>
             <ListView fx:id="orderList" prefHeight="326.0" prefWidth="230.0">
@@ -49,7 +49,7 @@
                   <Insets left="20.0" top="30.0" />
                </FlowPane.margin>
             </Label>
-            <TextField fx:id="totalBox">
+            <TextField fx:id="totalBox" prefHeight="37.0" prefWidth="150.0">
                <FlowPane.margin>
                   <Insets left="10.0" top="30.0" />
                </FlowPane.margin>
