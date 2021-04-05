@@ -22,7 +22,7 @@ public class Order implements Customizable {
     /**
      * Represent list of items of orders
      */
-    ArrayList<MenuItem> itemsList = new ArrayList();
+    ArrayList<MenuItem> itemsList = new ArrayList<>();
 
     /**
      * Used to get particular order as String

@@ -104,6 +104,21 @@ public class DonutController {
      */
     @FXML
     public void addToList(){
+
+        if(flavorBox.getValue() == null){
+            Alert a = new Alert(Alert.AlertType.WARNING);
+            a.setContentText("Select a type of donut");
+            a.show();
+            return;
+        }
+
+        if(flavorBox.getValue() == null){
+            Alert a = new Alert(Alert.AlertType.WARNING);
+            a.setContentText("Select a flavor for the donut");
+            a.show();
+            return;
+        }
+
         orders.add(donutOrder.getDetails());
         orderList.setItems(FXCollections.observableArrayList(orders));
         orderPrices.add(donutOrder.itemPrice());
@@ -124,6 +139,14 @@ public class DonutController {
      */
     @FXML
     public void addToOrder()throws Exception{
+
+        if(orders.size() == 0){
+            Alert a = new Alert(Alert.AlertType.WARNING);
+            a.setContentText("Add donuts to order");
+            a.show();
+            return;
+        }
+
         for(int i = 0; i < orders.size(); i++){
 
 

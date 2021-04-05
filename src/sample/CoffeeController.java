@@ -1,8 +1,5 @@
 package sample;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
@@ -148,11 +145,19 @@ public class CoffeeController {
 
     @FXML
     public void addOrder()throws Exception{
+        if(sizeBox.getValue() == null){
+            Alert a = new Alert(Alert.AlertType.WARNING);
+            a.setContentText("Select a size first");
+            a.show();
+            return;
+        }
     currentOrder.add(coffeeOrder);
-    currentOrder.setTotal(Double.parseDouble(coffeeOrder.toString().substring(1))+ currentOrder.getTotal());
+//    double q = Double.parseDouble(coffeeOrder.toString().substring(1))+ currentOrder.getTotal();
+    currentOrder.setTotal(coffeeOrder.getPrice());
     Stage stage=(Stage) add.getScene().getWindow();
     stage.close();
     }
 
 
 }
+//Double.parseDouble(coffeeOrder.toString().substring(1))+ currentOrder.getTotal()

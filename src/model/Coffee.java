@@ -91,7 +91,10 @@ public class Coffee extends MenuItem implements Customizable{
 
         double size_price = 0;
 
-        if(size.equals("Short")){
+        if(size == null){
+            size_price = 0.0;
+        }
+        else if(size.equals("Short")){
             size_price = 1.99;
         }
         else if(size.equals("Tall")){
@@ -105,7 +108,7 @@ public class Coffee extends MenuItem implements Customizable{
         }
 
         double add_in_cost = (0.2)*(num_add_in);
-
+        super.setPrice(roundOff(size_price + add_in_cost));
         return size_price + add_in_cost;
     }
 
