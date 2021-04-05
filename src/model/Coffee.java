@@ -142,7 +142,7 @@ public class Coffee extends MenuItem implements Customizable{
         for(int i=0;i<num_add_in;i++){
             tostr=tostr+addIn[i]+", ";
         }
-        tostr=tostr+itemPrice();
+        tostr=tostr+roundOff(itemPrice());
         return tostr;
 
     }
