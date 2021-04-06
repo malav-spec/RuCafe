@@ -13,7 +13,9 @@ import static GUI.Main.currentOrder;
  * @author Malav Doshi and Herik Patel
  */
 public class CoffeeController {
-
+    /**
+     * Represent coffee object in current GUI to store current orders details
+     */
     Coffee coffeeOrder = new Coffee();
 
     /**
@@ -67,25 +69,23 @@ public class CoffeeController {
      */
     private int first = 0;
 
+    /**
+     * Constructor for class CoffeeController
+     */
+    public CoffeeController(){
 
+    }
     /**
      * Display images as a slide show
      */
     @FXML
     public void displayImages(){
          image = new Image[4];
-//         Path path = Paths.get("short.jpg");
-//        File file1 = new File(getClass().getResourceAsStream("/images/cards/As.png"));
-//        File file2 = new File("C:\\Users\\Admin\\IdeaProjects\\RuCafe\\src\\sample\\tall.jpg");
-//        File file3 = new File("C:\\Users\\Admin\\IdeaProjects\\RuCafe\\src\\sample\\Comapre.jpg");
         try {
-            //String localUrl = file2.toURI().toURL().toString();
             image[1] = new Image(getClass().getResourceAsStream("short.jpg"));
 
-            //localUrl = file2.toURI().toURL().toString();
             image[2] = new Image(getClass().getResourceAsStream("tall.jpg"));
 
-            //localUrl = file3.toURI().toURL().toString();
             image[3] = new Image(getClass().getResourceAsStream("Comapre.jpg"));
 
         } catch (Exception e) {

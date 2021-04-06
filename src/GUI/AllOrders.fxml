@@ -3,7 +3,6 @@
 <?import javafx.geometry.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
-<?import javafx.scene.text.*?>
 
 <BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="546.0" prefWidth="738.0" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.AllOrdersContoller">
     <top>
@@ -31,7 +30,6 @@
                                 <Insets top="-60.0" />
                             </GridPane.margin>
                         </Button>
-                        <Button fx:id="change" mnemonicParsing="false" onAction="#MainScreen" text="New Order" GridPane.rowIndex="1" />
                     </children>
                 </GridPane>
                 <ListView fx:id="orderList" prefHeight="370.0" prefWidth="468.0">

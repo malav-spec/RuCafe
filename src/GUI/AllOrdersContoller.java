@@ -2,7 +2,6 @@ package GUI;
 
 import javafx.collections.FXCollections;
 import javafx.fxml.FXML;
-import javafx.scene.control.Button;
 import javafx.scene.control.ListView;
 import javafx.stage.FileChooser;
 import javafx.stage.Stage;
@@ -22,12 +21,17 @@ public class AllOrdersContoller {
      */
     @FXML
     private ListView orderList;
-    /**
-     * Button for the GUI
-     */
-    @FXML
-    private Button add;
 
+    /**
+     * Constructor for class AllOrdersContoller
+     */
+    public AllOrdersContoller(){
+
+    }
+
+    /**
+     * Used to display values in the listview
+     */
     public void initialize(){
         ArrayList<String> temp = allOrder.makeAL();
         orderList.setItems(FXCollections.observableArrayList(temp));
@@ -89,15 +93,5 @@ public class AllOrdersContoller {
         orderList.setItems(FXCollections.observableArrayList(temp));
     }
 
-
-
-    /**
-     * Used to navigate back to main screen
-     * @throws Exception throws Scene not found exception
-     */
-    public void MainScreen()throws Exception{
-        Stage stage=(Stage) add.getScene().getWindow();
-        stage.close();
-    }
 
 }

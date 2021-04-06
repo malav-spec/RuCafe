@@ -6,7 +6,6 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.control.ComboBox;
 import javafx.stage.Stage;
-
 import java.io.IOException;
 
 
@@ -21,6 +20,12 @@ public class Controller {
     @FXML
     private ComboBox ordersBox;
 
+    /**
+     * Constructor for class Controller
+     */
+    public Controller(){
+
+    }
     /**
      * Used choose option from Combobox
      * @throws Exception Throws scene not found exception

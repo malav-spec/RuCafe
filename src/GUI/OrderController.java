@@ -8,7 +8,6 @@ import javafx.scene.control.*;
 import javafx.stage.Stage;
 import java.util.ArrayList;
 import java.util.StringTokenizer;
-
 import static GUI.Main.allOrder;
 import static GUI.Main.currentOrder;
 
@@ -27,12 +26,19 @@ public class OrderController {
      * Represents Text field for GUI
      */
     @FXML
-    private TextField subtotal, totalBox;
+    private TextField totalBox;
     /**
      * Represents Listview for GUI
      */
     @FXML
     private ListView orderList;
+
+    /**
+     * Constructor for class OrderController
+     */
+    public OrderController(){
+
+    }
 
     /**
      * Used to show data in Listview
@@ -43,6 +49,9 @@ public class OrderController {
         totalBox.appendText("Total amount= $"+currentOrder.getTotalWithTax());
     }
 
+    /**
+     * Used to close the current window and show previous
+     */
     public void show(){
         addToAllOrders();
         currentOrder.clearAll();

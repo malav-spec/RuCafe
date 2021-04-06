@@ -9,18 +9,30 @@ import model.Order;
 import model.StoreOrder;
 
 /**
- * Used for the start of the application
- * @author Malav Doshi and Herik Patel
+ * Main class to run the Application
+ *@author Malav Doshi and Herik Patel
  */
 public class Main extends Application {
+    /**
+     * Represent current order in the cart
+     */
     public static Order currentOrder = new Order();
+    /**
+     * Represent All previous orders
+     */
     public static StoreOrder allOrder = new StoreOrder();
 
+    /**
+     * Constructor for class Main
+     */
+    public Main(){
+
+    }
 
     /**
-     * Method to start the GUI window
-     * @param primaryStage Stage object which is the main window for GUI
-     * @throws Exception Not used
+     * Method to run the GUI initially
+     * @param primaryStage Primary Stage which will be displayed initially
+     * @throws Exception Scene not found Exception
      */
     @Override
     public void start(Stage primaryStage) throws Exception{
@@ -33,7 +45,10 @@ public class Main extends Application {
 
     }
 
-
+    /**
+     * Main Method for the class
+     * @param args Not required
+     */
     public static void main(String[] args) {
         launch(args);
     }

@@ -72,6 +72,12 @@ public class DonutController {
     private final ArrayList<Double> orderPrices = new ArrayList<>();
 
     /**
+     * Constructor for class DonutController
+     */
+    public DonutController(){
+
+    }
+    /**
      * Used to set total amount for the order
      */
     @FXML
