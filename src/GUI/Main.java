@@ -8,11 +8,20 @@ import javafx.stage.Stage;
 import model.Order;
 import model.StoreOrder;
 
+/**
+ * Used for the start of the application
+ * @author Malav Doshi and Herik Patel
+ */
 public class Main extends Application {
     public static Order currentOrder = new Order();
     public static StoreOrder allOrder = new StoreOrder();
 
 
+    /**
+     * Method to start the GUI window
+     * @param primaryStage Stage object which is the main window for GUI
+     * @throws Exception Not used
+     */
     @Override
     public void start(Stage primaryStage) throws Exception{
         Parent root = FXMLLoader.load(getClass().getResource("sample.fxml"));

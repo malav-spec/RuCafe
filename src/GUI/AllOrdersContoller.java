@@ -26,7 +26,7 @@ public class AllOrdersContoller {
      * Button for the GUI
      */
     @FXML
-    private Button add,change;
+    private Button add;
 
     public void initialize(){
         ArrayList<String> temp = allOrder.makeAL();
