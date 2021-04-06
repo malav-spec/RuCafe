@@ -6,8 +6,7 @@ import javafx.scene.image.ImageView;
 import javafx.stage.Stage;
 import model.Coffee;
 import static sample.Main.currentOrder;
-import java.io.File;
-import java.net.MalformedURLException;
+
 
 /**
  * Used to represent Controller for Coffee GUI
@@ -75,20 +74,21 @@ public class CoffeeController {
     @FXML
     public void displayImages(){
          image = new Image[4];
-        File file1 = new File("C:\\Users\\Admin\\IdeaProjects\\RuCafe\\src\\sample\\short.jpg");
-        File file2 = new File("C:\\Users\\Admin\\IdeaProjects\\RuCafe\\src\\sample\\tall.jpg");
-        File file3 = new File("C:\\Users\\Admin\\IdeaProjects\\RuCafe\\src\\sample\\Comapre.jpg");
+//         Path path = Paths.get("short.jpg");
+//        File file1 = new File(getClass().getResourceAsStream("/images/cards/As.png"));
+//        File file2 = new File("C:\\Users\\Admin\\IdeaProjects\\RuCafe\\src\\sample\\tall.jpg");
+//        File file3 = new File("C:\\Users\\Admin\\IdeaProjects\\RuCafe\\src\\sample\\Comapre.jpg");
         try {
-            String localUrl = file1.toURI().toURL().toString();
-            image[1] = new Image(localUrl);
+            //String localUrl = file2.toURI().toURL().toString();
+            image[1] = new Image(getClass().getResourceAsStream("short.jpg"));
 
-            localUrl = file2.toURI().toURL().toString();
-            image[2] = new Image(localUrl);
+            //localUrl = file2.toURI().toURL().toString();
+            image[2] = new Image(getClass().getResourceAsStream("tall.jpg"));
 
-            localUrl = file3.toURI().toURL().toString();
-            image[3] = new Image(localUrl);
+            //localUrl = file3.toURI().toURL().toString();
+            image[3] = new Image(getClass().getResourceAsStream("Comapre.jpg"));
 
-        } catch (MalformedURLException e) {
+        } catch (Exception e) {
             e.printStackTrace();
         }
 
