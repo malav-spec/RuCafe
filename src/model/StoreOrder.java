@@ -14,7 +14,12 @@ public class StoreOrder implements Customizable{
      * Used to Represent Arraylist that stores all previous orders
      */
     private ArrayList<String> orders = new ArrayList();
+/**
+ * Constructor for StoreOrder
+ */
+public StoreOrder(){
 
+}
     /**
      * Used to Add a order to array list
      * @param obj Order which we want to add
